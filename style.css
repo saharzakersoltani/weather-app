@@ -1,0 +1,110 @@
+:root {
+  --font-color: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  /* font-size: ; */
+  /* line-height: ; */
+  color: var(--font-color);
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  background-image: url(images/desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  margin: 0 auto;
+  border-radius: 18px;
+  margin-top: 5rem;
+  text-align: center;
+  background-color: rgba(218, 215, 230, 0.651);
+  width: 30vw;
+  height: 85vh;
+}
+
+h1 {
+  padding-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-size: 3.2rem;
+}
+
+.input {
+  width: 90%;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1.6rem;
+  background-color: #fffcfc5a;
+  color: var(--font-color);
+}
+
+.btn__search {
+  border: none;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  color: #0bebe4;
+  padding: 1.6rem 3.2rem;
+  background-color: #fff;
+  margin-bottom: 4.8rem;
+}
+
+/* ************ */
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+.city__temperature {
+  font-size: 6rem;
+  line-height: 1;
+  margin-bottom: 1.6rem;
+}
+
+.country__name {
+  font-size: 3.6rem;
+  margin-bottom: 1rem;
+}
+
+.city__name {
+  font-size: 2.2rem;
+  margin-bottom: 2.8rem;
+  line-height: 2;
+}
+
+.climator__flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2.4rem;
+}
+
+.sky__like {
+  font-size: 1.8rem;
+}
+
+.humidity {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.wind {
+  font-size: 1.8rem;
+}
+
+.sky__img img {
+  width: 12rem;
+  height: 12rem;
+}
