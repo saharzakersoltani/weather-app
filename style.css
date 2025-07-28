@@ -17,7 +17,7 @@ body {
   /* font-size: ; */
   /* line-height: ; */
   color: var(--font-color);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 100vh;
   background-image: url(images/desktop.jpg);
   background-size: cover;
@@ -77,12 +77,12 @@ article {
   margin-bottom: 1.6rem;
 }
 
-.country__name {
+.location {
   font-size: 3.6rem;
   margin-bottom: 1rem;
 }
 
-.city__name {
+.city__calender__hour {
   font-size: 2.2rem;
   margin-bottom: 2.8rem;
   line-height: 2;
