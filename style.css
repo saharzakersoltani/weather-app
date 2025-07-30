@@ -31,7 +31,7 @@ body {
   text-align: center;
   background-color: rgba(218, 215, 230, 0.651);
   width: 30vw;
-  height: 85vh;
+  height: 90vh;
 }
 
 h1 {
@@ -58,7 +58,7 @@ h1 {
   color: #0bebe4;
   padding: 1.6rem 3.2rem;
   background-color: #fff;
-  margin-bottom: 4.8rem;
+  margin-bottom: 0.4rem;
 }
 
 .btn__search:hover {
@@ -79,12 +79,12 @@ article {
 
 .location {
   font-size: 3.6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .city__calender__hour {
   font-size: 2.2rem;
-  margin-bottom: 2.8rem;
+  margin-bottom: 3.2rem;
   line-height: 2;
 }
 
@@ -97,18 +97,41 @@ article {
 
 .sky__like {
   font-size: 1.8rem;
+  margin-bottom: 4.2rem;
 }
 
-.humidity {
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
-}
-
+.humidity,
 .wind {
   font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+  font-weight: 600;
 }
 
 .sky__img img {
-  width: 12rem;
-  height: 12rem;
+  width: 17rem;
+  height: 17rem;
+}
+
+.climator__icon {
+  width: 5rem;
+  height: 5rem;
+}
+
+.climator {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* text-align: center; */
+  gap: 1.6rem;
+}
+
+.f {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.style {
+  font-size: 1.8rem;
+  font-weight: 600;
 }
