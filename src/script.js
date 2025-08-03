@@ -1,8 +1,7 @@
 'use strict';
 
 import tzLookup from 'tz-lookup';
-import humidityIcon from './images/humidity.png';
-import windyIcon from './images/windy.png';
+
 //====================== Weather App ===========================
 const input = document.querySelector('.input');
 const btnSearch = document.querySelector('.btn__search');
@@ -35,9 +34,8 @@ const renderData = function (data) {
           <p class="sky__like">${data.weather[0].description}</p>
 
           <div class="climator__flex">
-          
             <div class='climator'>
-              <img class='climator__icon' src="${humidityIcon}" alt='humidity weather' />
+              <img class='climator__icon' src="/images/humidity.png" alt='humidity weather' />
                <div class="f">
                    <p class="humidity">${data.main.humidity}%</p>
                    <p class="style">Humidity</p>
@@ -45,7 +43,7 @@ const renderData = function (data) {
             </div>
 
             <div class='climator'>
-              <img class='climator__icon' src="${windyIcon}" alt=windy weather' />
+              <img class='climator__icon' src="/images/windy.png" alt=windy weather' />
                 <div class="f">
                    <p class="wind">${data.wind.speed} m/s</p>
                     <p class="style">Wind Speed</p>
@@ -58,7 +56,6 @@ const renderData = function (data) {
       </article>
     `;
   weatherContainer.appendChild(article);
-  console.log(humidityIcon);
 };
 
 //================== fetch data ===================
