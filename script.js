@@ -1,5 +1,6 @@
 'use strict';
 
+import tzLookup from 'tz-lookup';
 //====================== Weather App ===========================
 const input = document.querySelector('.input');
 const btnSearch = document.querySelector('.btn__search');
@@ -14,6 +15,8 @@ const renderData = function (data) {
   if (oldArticle) oldArticle.remove();
   // Create new article
   const article = document.createElement('article');
+
+  const tzName = tzLookup(data.coord.lat, data.coord.lon);
   article.innerHTML = `
     <article>
         <div class="sky__img">
@@ -26,12 +29,13 @@ const renderData = function (data) {
           <h4 class="city__temperature">${Math.round(data.main.temp)}&deg;C</h4>
           <h3 class="location">${data.name}, ${data.sys.country} </h3>
           <!-- <h4 class="city__calender__hour">2025-07-27 16:38</h4> -->
+          <h4 class="city__calender__hour">${tzName}</h4>
           <p class="sky__like">${data.weather[0].description}</p>
 
           <div class="climator__flex">
           
             <div class='climator'>
-              <img class='climator__icon' src='sky-images/humidity.png' alt='humidity weather' />
+              <img class='climator__icon' src="images/humidity.png" alt='humidity weather' />
                <div class="f">
                    <p class="humidity">${data.main.humidity}%</p>
                    <p class="style">Humidity</p>
@@ -39,7 +43,7 @@ const renderData = function (data) {
             </div>
 
             <div class='climator'>
-              <img class='climator__icon' src='sky-images/windy.png' alt=windy weather' />
+              <img class='climator__icon' src="images/windy.png" alt=windy weather' />
                 <div class="f">
                    <p class="wind">${data.wind.speed} m/s</p>
                     <p class="style">Wind Speed</p>
@@ -84,18 +88,17 @@ const mainFunction = function () {
   }
 };
 
-//================== event listener by click =====================
+//================== event listener =====================
 btnSearch.addEventListener('click', function (e) {
   e.preventDefault();
   mainFunction();
 });
 
-//================== event listener by button ====================
 input.addEventListener('keydown', function (e) {
   if (e.key === 'Enter') mainFunction();
 });
 
-//Check if the window is offline
+// =================Check if the window is offline =================
 window.addEventListener('offline', function () {
   const body = document.querySelector('body');
   document.querySelector('body').style.backgroundImage = 'none';
@@ -115,11 +118,16 @@ window.addEventListener('offline', function () {
   body.insertAdjacentHTML('beforeend', offlineHtml);
 });
 
-// const date = function (dt, timeZone) {
-//   const localeDate = new Date((dt + timeZone) * 1000);
-//   console.log(localeDate.toString());
+// =================== import library ===================
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime';
+
+// const date = function (lat, lon) {
+//   const tzName = tzLookup(lat, lon);
+//   console.log(tzLookup);
 // };
 
-// date(1754227271, 12600);
-
-// =================== import library ===================
+// const lat = 35.6892;
+// const lon = 51.389; // Tehran
+// const tzName = tzLookup(35.6944, 35.6944);
+// console.log(tzName);

@@ -1,8 +1,9 @@
 {
   "name": "simple-weather-app",
   "version": "1.0.0",
-  "main": "script.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,8 @@
     "core-js": "^3.44.0",
     "regenerator-runtime": "^0.14.1",
     "tz-lookup": "^6.1.25"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
   }
 }
