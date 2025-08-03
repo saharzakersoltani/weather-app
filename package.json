@@ -1,0 +1,24 @@
+{
+  "name": "simple-weather-app",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saharzakersoltani/weather-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saharzakersoltani/weather-app/issues"
+  },
+  "homepage": "https://github.com/saharzakersoltani/weather-app#readme",
+  "description": "",
+  "dependencies": {
+    "core-js": "^3.44.0",
+    "regenerator-runtime": "^0.14.1",
+    "tz-lookup": "^6.1.25"
+  }
+}

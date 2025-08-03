@@ -55,32 +55,30 @@ const renderData = function (data) {
 };
 
 //================== fetch data ===================
-const fetchData = function (value) {
-  const getData = async function (location) {
-    try {
-      const fetchData = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`
-      );
-      if (!fetchData.ok) {
-        console.log(fetchData);
-        throw new Error(`Can not fetch data! (${fetchData.status})`);
-      }
-      const getJSON = await fetchData.json();
-      renderData(getJSON);
-    } catch (err) {
-      console.error(`${err.message}`);
-      alert(`City not found! Please try again.`);
+const getData = async function (location) {
+  try {
+    const fetchData = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`
+    );
+    if (!fetchData.ok) {
+      console.log(fetchData);
+      throw new Error(`Can not fetch data! (${fetchData.status})`);
     }
-  };
-  getData(input.value);
+    const getJSON = await fetchData.json();
+    console.log(getJSON);
+    renderData(getJSON);
+  } catch (err) {
+    console.error(`${err.message}`);
+    alert(`City not found! Please try again.`);
+  }
 };
 
 ///////////////////////////////////////////////
 //=================== main function ===================
 const mainFunction = function () {
-  if (input.value === '') alert('fill the inpute!');
+  if (input.value === '') alert('fill the input!');
   else {
-    fetchData(input.value);
+    getData(input.value);
     input.value = '';
     input.placeholder = 'search here';
   }
@@ -94,7 +92,6 @@ btnSearch.addEventListener('click', function (e) {
 
 //================== event listener by button ====================
 input.addEventListener('keydown', function (e) {
-  console.log(e.key);
   if (e.key === 'Enter') mainFunction();
 });
 
@@ -117,3 +114,12 @@ window.addEventListener('offline', function () {
       `;
   body.insertAdjacentHTML('beforeend', offlineHtml);
 });
+
+// const date = function (dt, timeZone) {
+//   const localeDate = new Date((dt + timeZone) * 1000);
+//   console.log(localeDate.toString());
+// };
+
+// date(1754227271, 12600);
+
+// =================== import library ===================

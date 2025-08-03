@@ -27,11 +27,11 @@ body {
 .container {
   margin: 0 auto;
   border-radius: 18px;
-  margin-top: 5rem;
+  margin-top: 0rem;
   text-align: center;
   background-color: rgba(218, 215, 230, 0.651);
   width: 30vw;
-  height: 90vh;
+  height: 100vh;
 }
 
 h1 {
