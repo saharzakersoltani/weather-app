@@ -66,10 +66,10 @@ h1 {
 }
 
 /* ************ */
-article {
+/* article {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .city__temperature {
   font-size: 6rem;
@@ -96,7 +96,8 @@ article {
 }
 
 .sky__like {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 4.2rem;
 }
 
@@ -134,4 +135,35 @@ article {
 .style {
   font-size: 1.8rem;
   font-weight: 600;
+}
+
+/* OFFLINE MODE */
+.offline__mode {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* font-family: Tahoma, sans-serif; */
+}
+
+.offline__mode h1 {
+  font-size: 4.5rem;
+  margin-bottom: 5rem;
+}
+
+.offline__mode h4 {
+  font-size: 2.5rem;
+  margin-right: 16rem;
+  margin-bottom: 1.6rem;
+}
+
+.offline__mode ul li {
+  font-size: 1.6rem;
+  margin-left: 25rem;
+  padding-bottom: 1.6rem;
+}
+.img__dinosaur {
+  width: 10rem;
+  height: 10rem;
 }

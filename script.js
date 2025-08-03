@@ -1,25 +1,20 @@
 'use strict';
 
-// Weather App
+//====================== Weather App ===========================
 const input = document.querySelector('.input');
 const btnSearch = document.querySelector('.btn__search');
 const article = document.querySelector('article');
+const weatherContainer = document.querySelector('.container');
 const apiKey = '3366667e3901a854740f2c0b55f891cc';
 
-// sky images
-// const skyImgs = function (data) {
-//   const weatherId = data.weather[0].id;
-//   // if (200 <= weatherId && weatherId <= 232) {
-//   //   return 'https://openweathermap.org/img/wn/10d@2x.png';
-//   // }
-//   if (weatherId === 803) {
-//     return 'sky-images/02d@2x.png';
-//   }
-// };
-
-// render data
+//======================= render data =========================
 const renderData = function (data) {
-  const html = `
+  // Remove old article if exists
+  const oldArticle = document.querySelector('article');
+  if (oldArticle) oldArticle.remove();
+  // Create new article
+  const article = document.createElement('article');
+  article.innerHTML = `
     <article>
         <div class="sky__img">
           <img src='https://openweathermap.org/img/wn/${
@@ -56,29 +51,71 @@ const renderData = function (data) {
         
       </article>
     `;
-  article.insertAdjacentHTML('afterbegin', html);
+  weatherContainer.appendChild(article);
 };
 
-// event listener
-btnSearch.addEventListener('click', function (e) {
-  e.preventDefault();
+//================== fetch data ===================
+const fetchData = function (value) {
+  const getData = async function (location) {
+    try {
+      const fetchData = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`
+      );
+      if (!fetchData.ok) {
+        console.log(fetchData);
+        throw new Error(`Can not fetch data! (${fetchData.status})`);
+      }
+      const getJSON = await fetchData.json();
+      renderData(getJSON);
+    } catch (err) {
+      console.error(`${err.message}`);
+      alert(`Please try again.`);
+    }
+  };
+  getData(input.value);
+};
+
+///////////////////////////////////////////////
+//=================== main function ===================
+const mainFunction = function () {
   if (input.value === '') alert('fill the inpute!');
   else {
-    // fetch API
-    const getData = async function (location) {
-      try {
-        const fetchData = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`
-        );
-        if (!fetchData.ok)
-          throw new Error(`Can not fetch data! (${fetchData.status})`);
-        const getJSON = await fetchData.json();
-        console.log(getJSON);
-        renderData(getJSON);
-      } catch (err) {
-        console.error(`${err.message}`);
-      }
-    };
-    getData(input.value);
+    fetchData(input.value);
+    input.value = '';
+    input.placeholder = 'search here';
   }
+};
+
+//================== event listener by click =====================
+btnSearch.addEventListener('click', function (e) {
+  e.preventDefault();
+  mainFunction();
+});
+
+//================== event listener by button ====================
+input.addEventListener('keydown', function (e) {
+  console.log(e.key);
+  if (e.key === 'Enter') mainFunction();
+});
+
+//Check if the window is offline
+// const imgDinosaur = document.querySelector('.img__dinosaur');
+
+window.addEventListener('offline', function () {
+  const body = document.querySelector('body');
+  document.querySelector('body').style.backgroundImage = 'none';
+  weatherContainer.style.display = 'none';
+
+  const offlineHtml = `
+  <div class="offline__mode">
+      <h1>No internet</h1>
+      <h4>Try:</h4>
+      <ul>
+        <li>Checking the network cables, modem, and router</li>
+        <li>Reconnecting to Wi-Fi</li>
+        <li>Running Windows Network Diagnostics</li>
+      </ul>
+  </div>  
+      `;
+  body.insertAdjacentHTML('beforeend', offlineHtml);
 });
