@@ -69,7 +69,7 @@ const fetchData = function (value) {
       renderData(getJSON);
     } catch (err) {
       console.error(`${err.message}`);
-      alert(`Please try again.`);
+      alert(`City not found! Please try again.`);
     }
   };
   getData(input.value);
@@ -99,8 +99,6 @@ input.addEventListener('keydown', function (e) {
 });
 
 //Check if the window is offline
-// const imgDinosaur = document.querySelector('.img__dinosaur');
-
 window.addEventListener('offline', function () {
   const body = document.querySelector('body');
   document.querySelector('body').style.backgroundImage = 'none';
