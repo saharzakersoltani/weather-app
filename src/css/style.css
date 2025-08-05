@@ -19,7 +19,7 @@ body {
   color: var(--font-color);
   font-family: 'Roboto', sans-serif;
   height: 100vh;
-  background-image: url('../public/images/desktop.jpg');
+  background-image: url('/src/img/desktop.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }

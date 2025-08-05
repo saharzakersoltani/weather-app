@@ -1,6 +1,7 @@
 'use strict';
 
 import tzLookup from 'tz-lookup';
+import humidityIcon from '../img/humidity.png';
 
 //====================== Weather App ===========================
 const input = document.querySelector('.input');
@@ -35,7 +36,7 @@ const renderData = function (data) {
 
           <div class="climator__flex">
             <div class='climator'>
-              <img class='climator__icon' src="/images/humidity.png" alt='humidity weather' />
+              <img class='climator__icon' src="${humidityIcon}" alt='humidity weather' />
                <div class="f">
                    <p class="humidity">${data.main.humidity}%</p>
                    <p class="style">Humidity</p>
@@ -43,7 +44,7 @@ const renderData = function (data) {
             </div>
 
             <div class='climator'>
-              <img class='climator__icon' src="/images/windy.png" alt=windy weather' />
+              <img class='climator__icon' src="/src/img/windy.png" alt=windy weather' />
                 <div class="f">
                    <p class="wind">${data.wind.speed} m/s</p>
                     <p class="style">Wind Speed</p>
