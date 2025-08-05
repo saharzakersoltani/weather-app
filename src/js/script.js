@@ -1,8 +1,5 @@
 'use strict';
 
-import tzLookup from 'tz-lookup';
-import humidityIcon from '../img/humidity.png';
-
 //====================== Weather App ===========================
 const input = document.querySelector('.input');
 const btnSearch = document.querySelector('.btn__search');
@@ -18,7 +15,6 @@ const renderData = function (data) {
   // Create new article
   const article = document.createElement('article');
 
-  const tzName = tzLookup(data.coord.lat, data.coord.lon);
   article.innerHTML = `
     <article>
         <div class="sky__img">
@@ -30,13 +26,12 @@ const renderData = function (data) {
         <div>
           <h4 class="city__temperature">${Math.round(data.main.temp)}&deg;C</h4>
           <h3 class="location">${data.name}, ${data.sys.country} </h3>
-          <!-- <h4 class="city__calender__hour">2025-07-27 16:38</h4> -->
-          <h4 class="city__calender__hour">${tzName}</h4>
+          <h4 class="city__calender__hour">${new Date().toDateString()}</h4>
           <p class="sky__like">${data.weather[0].description}</p>
 
           <div class="climator__flex">
             <div class='climator'>
-              <img class='climator__icon' src="${humidityIcon}" alt='humidity weather' />
+              <img class='climator__icon' src="src/img/humidity.png" alt='humidity weather' />
                <div class="f">
                    <p class="humidity">${data.main.humidity}%</p>
                    <p class="style">Humidity</p>
@@ -44,7 +39,7 @@ const renderData = function (data) {
             </div>
 
             <div class='climator'>
-              <img class='climator__icon' src="/src/img/windy.png" alt=windy weather' />
+              <img class='climator__icon' src="src/img/windy.png" alt=windy weather' />
                 <div class="f">
                    <p class="wind">${data.wind.speed} m/s</p>
                     <p class="style">Wind Speed</p>
@@ -119,16 +114,4 @@ window.addEventListener('offline', function () {
   body.insertAdjacentHTML('beforeend', offlineHtml);
 });
 
-// =================== import library ===================
-// import 'core-js/stable';
-// import 'regenerator-runtime/runtime';
-
-// const date = function (lat, lon) {
-//   const tzName = tzLookup(lat, lon);
-//   console.log(tzLookup);
-// };
-
-// const lat = 35.6892;
-// const lon = 51.389; // Tehran
-// const tzName = tzLookup(35.6944, 35.6944);
-// console.log(tzName);
+// =================== current date ===================

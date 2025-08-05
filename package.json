@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "parcel index.html ",
-    "build": "parcel build index.html "
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -19,10 +19,6 @@
   "description": "",
   "dependencies": {
     "core-js": "^3.44.0",
-    "regenerator-runtime": "^0.14.1",
-    "tz-lookup": "^6.1.25"
-  },
-  "devDependencies": {
-    "parcel": "^2.15.4"
+    "regenerator-runtime": "^0.14.1"
   }
 }
