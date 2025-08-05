@@ -30,8 +30,8 @@ body {
   margin-top: 0rem;
   text-align: center;
   background-color: rgba(218, 215, 230, 0.651);
-  width: 30vw;
-  height: 100vh;
+  max-width: 35vw;
+  max-height: 100vh;
 }
 
 h1 {
@@ -79,7 +79,7 @@ h1 {
 
 .location {
   font-size: 3.6rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3.5rem;
 }
 
 .city__calender__hour {
@@ -93,6 +93,7 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   padding: 0 2.4rem;
+  padding-bottom: 4.2rem;
 }
 
 .sky__like {

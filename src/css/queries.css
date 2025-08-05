@@ -1,0 +1,53 @@
+/* under 1246px */
+@media (max-width: 78em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* under 930px */
+@media (max-width: 58em) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .sky__img img {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .btn__search {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.6rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .input {
+    font-size: 1.6rem;
+  }
+
+  .city__temperature {
+    font-size: 4rem;
+  }
+
+  .location {
+    font-size: 2.4rem;
+  }
+
+  .container {
+    max-width: 50rem;
+  }
+}
+
+/* under 450px */
+@media (max-width: 29em) {
+  .container {
+    border-radius: 0;
+  }
+
+  .climator__flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+  }
+}
