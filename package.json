@@ -1,24 +1,26 @@
 {
   "name": "simple-weather-app",
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
-    "start": "live-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saharzakersoltani/weather-app.git"
   },
-  "author": "",
+  "author": "Sahar Zaker Soltani",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/saharzakersoltani/weather-app/issues"
   },
   "homepage": "https://github.com/saharzakersoltani/weather-app#readme",
-  "description": "",
+  "description": "Weather app",
   "dependencies": {
     "core-js": "^3.44.0",
     "regenerator-runtime": "^0.14.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
   }
 }
