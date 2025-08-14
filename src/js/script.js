@@ -1,17 +1,18 @@
 import humidity from 'url:../img/humidity.png';
 import windy from 'url:../img/windy.png';
+import { API_KEY } from './configs';
 //====================== Weather App ===========================
 const input = document.querySelector('.input');
 const btnSearch = document.querySelector('.btn__search');
 const article = document.querySelector('article');
 const weatherContainer = document.querySelector('.container');
-const apiKey = '3366667e3901a854740f2c0b55f891cc';
 
 //======================= render data =========================
 const renderData = function (data) {
   // Remove old article if exists
   const oldArticle = document.querySelector('article');
   if (oldArticle) oldArticle.remove();
+
   // Create new article
   const article = document.createElement('article');
 
@@ -58,7 +59,7 @@ const renderData = function (data) {
 const getData = async function (location) {
   try {
     const fetchData = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`
     );
     if (!fetchData.ok) {
       console.log(fetchData);
@@ -113,5 +114,3 @@ window.addEventListener('offline', function () {
       `;
   body.insertAdjacentHTML('beforeend', offlineHtml);
 });
-
-// =================== current date ===================

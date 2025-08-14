@@ -9,7 +9,6 @@ dist/
 
 # Ignore system files (Windows, macOS)
 Thumbs.db
-.DS_Store
 
 # Ignore log files
 *.log
