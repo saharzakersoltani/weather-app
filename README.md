@@ -74,3 +74,10 @@ If you have any questions, feedback, or just want to connect, feel free to reach
 - **GitHub:** [@saharzakersoltani](https://github.com/saharzakersoltani)
 - **Email:** sahar.zs2002@gmail.com
 - **LinkedIn:** [Sahar Zaker Soltani](https://www.linkedin.com/in/sahar-zaker-soltani)
+
+---
+
+## License
+
+This project is licensed under the MIT License – see the [LICENSE](./LICENSE) file for details.
+
